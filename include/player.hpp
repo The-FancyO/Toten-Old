@@ -16,11 +16,14 @@ public:
     void render();
 
 private:
+    // Bool
+    bool is_moving;
+    bool is_idle;
     // Texture stuff
     const char* current_texture_val;
     Texture2D current_texture;
 
-    map <const char*, tuple <Texture2D, int>> texture
+    map <const char*, pair<Texture2D, int>> texture
     {
         {"idle", {LoadTexture("res/entity/player/test_idle_spritesheet.png"), 6}},
         {"move", {LoadTexture("res/entity/player/test_run_spritesheet.png"), 6}}
@@ -38,13 +41,10 @@ private:
     Rectangle col;
 
     // Animation
-    int frames;
     int anim_speed;
     int frame_counter;
-
     int current_frame;
 
-
     // Functions
-    void move();
+    void update_motion();
 };

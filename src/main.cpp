@@ -11,6 +11,8 @@ int main(void)
     const int screenWidth = 960;
     const int screenHeight = 540;
 
+    SetConfigFlags(FLAG_VSYNC_HINT);
+
     InitWindow(screenWidth, screenHeight, "Toten");
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
@@ -31,7 +33,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            ClearBackground(LIGHTGRAY);
             player.render();
 
         EndDrawing();

@@ -31,10 +31,14 @@ LDLIBS 				:= -lraylib
 ################################################################################
 #### COMPILATION
 ################################################################################
-all: build run
+all: build run over
 
 build:
 	$(CXX) $(CXXFLAGS) -o $(EXEC) $(SRCS) $(WARNINGS) $(LDLIBS)
 
 run:
 	./$(EXEC)
+
+over:
+	read -p "Press enter to continue"
+	clear
