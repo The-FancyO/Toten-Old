@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "player.hpp"
 
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -13,6 +14,8 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "Toten");
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+
+    Player player;
     //--------------------------------------------------------------------------------------
 
     // Main game loop
@@ -21,6 +24,7 @@ int main(void)
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
+        player.update();
         //----------------------------------------------------------------------------------
 
         // Draw
@@ -28,6 +32,7 @@ int main(void)
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
+            player.render();
 
         EndDrawing();
         //----------------------------------------------------------------------------------

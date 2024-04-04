@@ -17,12 +17,9 @@ SRCS 				:= $(sort $(shell find $(SRC_DIR) -name '*.cpp'))
 INCLUDE_DIR 		:= include
 INCLUDES 			:= -I$(INCLUDE_DIR)
 
-# C preprocessor settings
-CPPFLAGS 			:= $(INCLUDES)
-
 # C++ compiler settings
 CXX 				:= clang++
-CXXFLAGS 			:= -std=c++20 -O3
+CXXFLAGS 			:= -std=c++20 -O3 $(INCLUDES)
 WARNINGS 			:= -Wall -Wpedantic -Wextra
 
 # Linker flags
