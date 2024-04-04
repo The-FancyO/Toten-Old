@@ -98,7 +98,7 @@ void Player::update()
 
     frame_counter++;
 
-    if (frame_counter >= (GetFPS() /anim_speed))
+    if (frame_counter >= (GetFPS() / anim_speed))
     {
         frame_counter = 0;
         current_frame++;
