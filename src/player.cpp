@@ -67,7 +67,9 @@ void Player::update_motion()
     {
         is_moving = true;
         is_idle = false;
+
         pos.x -= (vel.x * GetFrameTime() * dest.width);
+        src.width = -size.x;
     }
     else if (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT))
     {
@@ -75,6 +77,7 @@ void Player::update_motion()
         is_idle = false;
 
         pos.x += (vel.x * GetFrameTime() * dest.width);
+        src.width = size.x;
     }
 
     if (is_moving)
@@ -100,7 +103,7 @@ void Player::update()
         frame_counter = 0;
         current_frame++;
 
-        if (current_frame > 5) current_frame = 0;
+        if (current_frame > texture[current_texture_val].second - 1) current_frame = 0;
 
         src.x = (float)current_frame * (float)src.width;
     }
