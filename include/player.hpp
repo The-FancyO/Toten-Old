@@ -19,6 +19,8 @@ private:
     // Bool
     bool is_moving;
     bool is_idle;
+    bool is_flipped;
+
     // Texture stuff
     const char* current_texture_val;
     Texture2D current_texture;
@@ -26,7 +28,8 @@ private:
     map <const char*, pair<Texture2D, int>> texture
     {
         {"idle", {LoadTexture("res/entity/player/test_idle_spritesheet.png"), 6}},
-        {"move", {LoadTexture("res/entity/player/test_run_spritesheet.png"), 6}}
+        {"move", {LoadTexture("res/entity/player/test_run_spritesheet.png"), 6}},
+        {"test", {LoadTexture("res/entity/player/test.png"), 1}}
     };
 
     // Vectors
