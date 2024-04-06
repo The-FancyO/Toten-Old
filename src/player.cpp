@@ -8,7 +8,7 @@ Player::Player()
     current_texture_val = "idle";
     current_texture = texture[current_texture_val].first;
 
-    pos = { 30,30 };
+    pos = { (float)GetScreenWidth()/2 - dest.width/2, (float)GetScreenHeight()/2 - dest.height/2 };
     vel = { 5, 5 };
     scale = { 3, 3 };
     size = { (float)current_texture.width/texture[current_texture_val].second, (float)current_texture.height };
@@ -81,31 +81,23 @@ void Player::update_motion()
     }
 
     if (is_moving)
-    {
         current_texture_val = "move";
-    }
     else
-    {
         current_texture_val = "idle";
-    }
+
+    if (is_flipped)
+        src.width = -size.x;
+    else
+        src.width = size.x;
 }
 
 void Player::update()
 {
-    update_motion();
-
     size = { (float)current_texture.width/texture[current_texture_val].second, (float)current_texture.height };
     src.width = size.x;
     src.height = size.y;
 
-    if (is_flipped)
-    {
-        src.width = -size.x;
-    }
-    else
-    {
-        src.width = size.x;
-    }
+    update_motion();
 
     current_texture = texture[current_texture_val].first;
 
@@ -116,12 +108,13 @@ void Player::update()
         frame_counter = 0;
         current_frame++;
 
-        if (current_frame > texture[current_texture_val].second - 1)
+        if (current_frame > (texture[current_texture_val].second - 1))
         {
             current_frame = 0;
         }
         src.x = (float)current_frame * (float)src.width;
     }
+
     dest = {
         pos.x,
         pos.y,

@@ -15,6 +15,8 @@ public:
     void update();
     void render();
 
+    Rectangle col;
+
 private:
     // Bool
     bool is_moving;
@@ -41,7 +43,6 @@ private:
     // Rects
     Rectangle src;
     Rectangle dest;
-    Rectangle col;
 
     // Animation
     int anim_speed;

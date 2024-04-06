@@ -11,9 +11,10 @@ int main(void)
     const int screenWidth = 960;
     const int screenHeight = 540;
 
+    SetConfigFlags(FLAG_WINDOW_ALWAYS_RUN);
     SetConfigFlags(FLAG_VSYNC_HINT);
 
-    InitWindow(screenWidth, screenHeight, "Toten");
+    InitWindow(screenWidth, screenHeight, "Töten");
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
 
