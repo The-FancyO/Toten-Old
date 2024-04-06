@@ -1,7 +1,6 @@
 git add .
 
-echo "Input git message: "
-read message -p
+read -a message <<< "ENTER GIT MESSAGE: "
 
 git commit -m $message
 git pull
