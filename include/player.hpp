@@ -2,7 +2,6 @@
 
 #include <raylib.h>
 #include <map>
-#include <tuple>
 
 using namespace std;
 
