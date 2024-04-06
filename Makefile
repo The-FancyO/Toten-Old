@@ -42,3 +42,6 @@ run:
 over:
 	read -p "Press enter to continue"
 	clear
+
+git:
+	./sync.sh
