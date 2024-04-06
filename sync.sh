@@ -1,6 +1,8 @@
 git add .
 
-read -a message <<< "ENTER GIT MESSAGE: "
+echo "Input git message: "
 
-git commit -m $message
+read -a message
+
+git commit -m $message[@]
 git pull
