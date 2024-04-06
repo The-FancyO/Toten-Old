@@ -2,7 +2,7 @@ git add .
 
 echo "Input git message: "
 
-read -a message
+read message
 
-git commit -m $message[@]
+git commit -m ${message[@]}
 git pull
