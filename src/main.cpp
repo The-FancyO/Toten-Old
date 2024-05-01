@@ -37,6 +37,8 @@ int main(void)
             ClearBackground(LIGHTGRAY);
             player.render();
 
+            DrawFPS(18, 20);
+
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
