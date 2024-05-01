@@ -21,6 +21,8 @@ private:
     bool is_moving;
     bool is_idle;
     bool is_flipped;
+    
+    bool debug;
 
     // Texture stuff
     const char* current_texture_val;

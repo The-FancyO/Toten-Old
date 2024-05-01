@@ -37,6 +37,8 @@ Player::Player()
         size.x * scale.x,
         size.y * scale.y
     };
+
+    debug = false;
 }
 
 Player::~Player() {}
@@ -93,6 +95,13 @@ void Player::update_motion()
 
 void Player::update()
 {
+    if (IsKeyPressed(KEY_V) && !debug) {
+        debug = true;
+    }
+    else if (IsKeyPressed(KEY_V) && debug) {
+        debug = false;
+    }
+
     size = { (float)current_texture.width/texture[current_texture_val].second, (float)current_texture.height };
     src.width = size.x;
     src.height = size.y;
@@ -133,4 +142,8 @@ void Player::update()
 void Player::render()
 {
     DrawTexturePro(current_texture, src, dest, {dest.width/2,dest.height/2}, 0.0f, WHITE);
+
+    if (debug) {
+        DrawRectangleLinesEx(col, 3, RED);
+    }
 }
