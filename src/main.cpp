@@ -4,46 +4,47 @@
 // Program main entry point
 //------------------------------------------------------------------------------------
 int main(void) {
-  // Initialization
-  //--------------------------------------------------------------------------------------
-  const int screenWidth = 960;
-  const int screenHeight = 540;
+    // Initialization
+    //--------------------------------------------------------------------------------------
+    const int screenWidth = 960;
+    const int screenHeight = 540;
 
-  SetConfigFlags(FLAG_WINDOW_ALWAYS_RUN);
-  SetConfigFlags(FLAG_VSYNC_HINT);
+    SetConfigFlags(FLAG_WINDOW_ALWAYS_RUN);
+    SetConfigFlags(FLAG_VSYNC_HINT);
 
-  InitWindow(screenWidth, screenHeight, "Töten");
+    InitWindow(screenWidth, screenHeight, "Töten");
 
-  SetTargetFPS(60); // Set our game to run at 60 frames-per-second
-  Player player;
-  //--------------------------------------------------------------------------------------
+    SetTargetFPS(60); // Set our game to run at 60 frames-per-second
+    Player player;
+    //--------------------------------------------------------------------------------------
 
-  // Main game loop
-  while (!WindowShouldClose()) // Detect window close button or ESC key
-  {
-    // Update
-    //----------------------------------------------------------------------------------
-    // TODO: Update your variables here
-    player.update();
-    //----------------------------------------------------------------------------------
+    // Main game loop
+    while (!WindowShouldClose()) // Detect window close button or ESC key
+    {
+        // Update
+        //----------------------------------------------------------------------------------
+        // TODO: Update your variables here
+        player.update();
+        //----------------------------------------------------------------------------------
 
-    // Draw
-    //----------------------------------------------------------------------------------
-    BeginDrawing();
+        // Draw
+        //----------------------------------------------------------------------------------
+        BeginDrawing();
 
-    ClearBackground(LIGHTGRAY);
-    player.render();
+            ClearBackground(LIGHTGRAY);
+            
+            player.render();
 
-    DrawFPS(18, 20);
+            DrawFPS(18, 20);
 
-    EndDrawing();
-    //----------------------------------------------------------------------------------
-  }
+        EndDrawing();
+        //----------------------------------------------------------------------------------
+    }
 
-  // De-Initialization
-  //--------------------------------------------------------------------------------------
-  CloseWindow(); // Close window and OpenGL context
-  //--------------------------------------------------------------------------------------
+    // De-Initialization
+    //--------------------------------------------------------------------------------------
+    CloseWindow(); // Close window and OpenGL context
+    //--------------------------------------------------------------------------------------
 
-  return 0;
+    return 0;
 }
