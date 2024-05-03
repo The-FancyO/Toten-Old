@@ -1,55 +1,52 @@
 #pragma once
 
-#include <raylib.h>
 #include <map>
+#include <raylib.h>
 
 using namespace std;
 
-class Player
-{
+class Player {
 public:
-    Player();
-    ~Player();
+  Player();
+  ~Player();
 
-    void update();
-    void render();
+  void update();
+  void render();
 
-    Rectangle col;
+  Rectangle col;
 
 private:
-    // Bool
-    bool is_moving;
-    bool is_idle;
-    bool is_flipped;
-    
-    bool debug;
+  // Bool
+  bool is_moving;
+  bool is_idle;
+  bool is_flipped;
 
-    // Texture stuff
-    const char* current_texture_val;
-    Texture2D current_texture;
+  bool debug;
 
-    map <const char*, pair<Texture2D, int>> texture
-    {
-        {"idle", {LoadTexture("res/entity/player/test_idle_spritesheet.png"), 6}},
-        {"move", {LoadTexture("res/entity/player/test_run_spritesheet.png"), 6}},
-        {"test", {LoadTexture("res/entity/player/test.png"), 1}}
-    };
+  // Texture stuff
+  const char *current_texture_val;
+  Texture2D current_texture;
 
-    // Vectors
-    Vector2 pos;
-    Vector2 vel;
-    Vector2 scale;
-    Vector2 size;
+  map<const char *, pair<Texture2D, int>> texture{
+      {"idle", {LoadTexture("res/entity/player/test_idle_spritesheet.png"), 6}},
+      {"move", {LoadTexture("res/entity/player/test_run_spritesheet.png"), 6}},
+      {"test", {LoadTexture("res/entity/player/test.png"), 1}}};
 
-    // Rects
-    Rectangle src;
-    Rectangle dest;
+  // Vectors
+  Vector2 pos;
+  Vector2 vel;
+  Vector2 scale;
+  Vector2 size;
 
-    // Animation
-    int anim_speed;
-    int frame_counter;
-    int current_frame;
+  // Rects
+  Rectangle src;
+  Rectangle dest;
 
-    // Functions
-    void update_motion();
+  // Animation
+  int anim_speed;
+  int frame_counter;
+  int current_frame;
+
+  // Functions
+  void update_motion();
 };
