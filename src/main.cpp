@@ -32,7 +32,7 @@ int main(void) {
         BeginDrawing();
 
             ClearBackground(LIGHTGRAY);
-            
+
             DrawFPS(18, 20);
 
         EndDrawing();

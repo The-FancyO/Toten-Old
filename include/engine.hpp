@@ -5,6 +5,12 @@
 
 class Engine {
 public:
+    Engine();
+    ~Engine();
+
+    void update();
+    void render();
 
 private:
+    Player player;
 };
