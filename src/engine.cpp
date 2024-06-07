@@ -4,6 +4,10 @@ Engine::Engine() {}
 
 Engine::~Engine() {}
 
-void Engine::update() {}
+void Engine::update() {
+    player.update();
+}
 
-void Engine::render() {}
+void Engine::render() {
+    player.render();    
+}

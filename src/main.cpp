@@ -17,6 +17,8 @@ int main(void) {
     InitWindow(screenWidth, screenHeight, "Töten");
 
     SetTargetFPS(60); // Set our game to run at 60 frames-per-second
+
+    Engine engine;
     //--------------------------------------------------------------------------------------
 
     // Main game loop
@@ -25,6 +27,7 @@ int main(void) {
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
+        engine.update();
         //----------------------------------------------------------------------------------
 
         // Draw
@@ -32,6 +35,8 @@ int main(void) {
         BeginDrawing();
 
             ClearBackground(LIGHTGRAY);
+            
+            engine.render();
 
             DrawFPS(18, 20);
 
