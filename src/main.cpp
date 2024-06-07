@@ -34,7 +34,7 @@ int main(void) {
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(LIGHTGRAY);
+            ClearBackground(BEIGE);
             
             engine.render();
 

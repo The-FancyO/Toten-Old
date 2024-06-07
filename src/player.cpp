@@ -1,5 +1,7 @@
 #include <player.hpp>
 #include <iostream>
+#include <raylib.h>
+#include <raymath.h>
 
 using namespace std;
 
@@ -54,14 +56,14 @@ void Player::update_motion()
         is_moving = true;
         is_idle = false;
 
-        pos.y -= (vel.y * GetFrameTime() * dest.height);
+        pos.y -= (vel.y * GetFrameTime()) * dest.height;
     }
     else if (IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN))
     {
         is_moving = true;
         is_idle = false;
 
-        pos.y += (vel.y * GetFrameTime() * dest.height);
+        pos.y += (vel.y * GetFrameTime()) * dest.height;
     }
 
     // Horizontal
@@ -71,7 +73,7 @@ void Player::update_motion()
         is_flipped = true;
         is_idle = false;
 
-        pos.x -= (vel.x * GetFrameTime() * dest.width);
+        pos.x -= (vel.x * GetFrameTime()) * dest.width;
     }
     else if (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT))
     {
@@ -79,7 +81,7 @@ void Player::update_motion()
         is_flipped = false;
         is_idle = false;
 
-        pos.x += (vel.x * GetFrameTime() * dest.width);
+        pos.x += (vel.x * GetFrameTime()) * dest.width;
     }
 
     if (is_moving)

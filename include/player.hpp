@@ -2,6 +2,7 @@
 
 #include <map>
 #include <raylib.h>
+#include <raymath.h>
 
 using namespace std;
 
@@ -35,7 +36,9 @@ private:
 
     // Vectors
     Vector2 pos;
+    Vector2 new_pos;
     Vector2 vel;
+    Vector2 norm_vel;
     Vector2 scale;
     Vector2 size;
 
