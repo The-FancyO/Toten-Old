@@ -1,4 +1,4 @@
-git add .
+git add *
 
 echo "Input git message: "
 
