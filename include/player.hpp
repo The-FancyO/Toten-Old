@@ -8,13 +8,13 @@ using namespace std;
 
 class Player {
 public:
-  Player();
-  ~Player();
+    Player();
+    ~Player();
 
-  void update();
-  void render();
+    void update();
+    void render();
 
-  Rectangle col;
+    Rectangle col;
 
 private:
     // Bool
@@ -36,9 +36,7 @@ private:
 
     // Vectors
     Vector2 pos;
-    Vector2 new_pos;
     Vector2 vel;
-    Vector2 norm_vel;
     Vector2 scale;
     Vector2 size;
 
