@@ -12,5 +12,7 @@ public:
     void render();
 
 private:
+    Image map_col = LoadImage("res/env/map.png");
+
     Player player;
 };
