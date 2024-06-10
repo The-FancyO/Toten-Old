@@ -34,6 +34,9 @@ private:
         {"test", {LoadTexture("res/entity/player/test.png"), 1}}
     };
 
+    // Camera
+    Camera2D cam;
+
     // Vectors
     Vector2 pos;
     Vector2 vel;
