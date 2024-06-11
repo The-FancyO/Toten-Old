@@ -1,9 +1,13 @@
-git add *
+git add .
 
-echo "Input git message: "
+echo 'Enter the commit message:'
+read commit_message
 
-read message
+git commit -m "$commit_message"
 
-git commit -m ${message[@]}
-git push
+echo 'Enter the name of the branch:'
+read branch
+
+git push origin $branch
+
 git pull
