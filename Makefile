@@ -18,7 +18,7 @@ INCLUDE_DIR 		:= include/
 INCLUDES 			:= -I$(INCLUDE_DIR)
 
 # C++ compiler settings
-CXX 				:= clang++
+CXX 				:= g++
 CXXFLAGS 			:= -std=c++20 -O3 $(INCLUDES)
 WARNINGS 			:= -Wall -Wpedantic -Wextra
 

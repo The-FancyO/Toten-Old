@@ -1,5 +1,5 @@
 #include <raylib.h>
-#include <player.hpp>
+#include <engine.hpp>
 
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -18,7 +18,7 @@ int main(void) {
 
     SetTargetFPS(60); // Set our game to run at 60 frames-per-second
 
-    Player player;
+    Engine engine;
     //--------------------------------------------------------------------------------------
 
     // Main game loop
@@ -27,7 +27,7 @@ int main(void) {
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
-        player.update();
+        engine.update();
         //----------------------------------------------------------------------------------
 
         // Draw
@@ -36,7 +36,7 @@ int main(void) {
 
             ClearBackground(BEIGE);
             
-            player.render();
+            engine.render();
 
             DrawFPS(18, 20);
 
