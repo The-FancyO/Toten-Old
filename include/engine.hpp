@@ -11,9 +11,13 @@ public:
     void update();
     void render();
 
+    Player get_player();
+
 private:
     Image map_col;
     Texture2D map;
 
     Player player;
+
+    void render_map_col();
 };

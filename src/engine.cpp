@@ -11,13 +11,7 @@ Engine::~Engine() {
     UnloadImage(map_col);
 }
 
-void Engine::update() {
-    player.update();
-}
-
-void Engine::render() {
-    DrawTextureEx(map, {0,0}, 0.0f, 2.0f, WHITE);
-
+void Engine::render_map_col() {
     for (int x = 0; x < MAP_WIDTH; x++) {
         for (int y = 0; y < MAP_HEIGHT; y++) {
             Color pixel = GetImageColor(map_col, x, y);
@@ -27,6 +21,22 @@ void Engine::render() {
             }
         }
     }
+}
+
+void Engine::update() {
+    player.update();
+}
+
+void Engine::render() {
+    DrawTextureEx(map, {0,0}, 0.0f, 2.0f, WHITE);
+
+    if (player.debug) {
+        render_map_col();
+    }
 
     player.render();
+}
+
+Player Engine::get_player() {
+    return player;
 }

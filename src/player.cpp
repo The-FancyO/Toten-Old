@@ -1,4 +1,5 @@
 #include <player.hpp>
+#include <raylib.h>
 
 using namespace std;
 
@@ -7,10 +8,16 @@ Player::Player()
     current_texture_val = "idle";
     current_texture = texture[current_texture_val].first;
 
-    pos = { (float)GetScreenWidth()/2 - dest.width/2, (float)GetScreenHeight()/2 - dest.height/2 };
+    pos = { 200, 200 };
     vel = { 5, 5 };
-    scale = { 3, 3 };
     size = { (float)current_texture.width/texture[current_texture_val].second, (float)current_texture.height };
+    scale = { 3, 3 };
+
+    cam = { 0 };
+    cam.target = pos;
+    cam.offset = { GetScreenWidth()/2.0f, GetScreenHeight()/2.0f };
+    cam.rotation = 0.0f;
+    cam.zoom = 1.0f;
 
     src = {
         0,
@@ -92,6 +99,11 @@ void Player::update_motion()
         src.width = size.x;
 }
 
+void Player::update_cam() {
+    cam.offset = { GetScreenWidth()/2.0f, GetScreenHeight()/2.0f };
+    cam.target = pos;
+}
+
 void Player::update()
 {
     if (IsKeyPressed(KEY_V) && !debug) {
@@ -106,6 +118,7 @@ void Player::update()
     src.height = size.y;
 
     update_motion();
+    update_cam();
 
     current_texture = texture[current_texture_val].first;
 

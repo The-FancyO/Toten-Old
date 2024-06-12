@@ -14,15 +14,19 @@ public:
     void update();
     void render();
 
+    // Collider
     Rectangle col;
+
+    // Camera
+    Camera2D cam;
+
+    bool debug; // debugging
 
 private:
     // Bool
     bool is_moving;
     bool is_idle;
     bool is_flipped;
-
-    bool debug;
 
     // Texture stuff
     const char *current_texture_val;
@@ -36,12 +40,9 @@ private:
 
     // Vectors
     Vector2 pos;
-    Vector2 vel;
-    Vector2 scale;
+    Vector2 vel; 
     Vector2 size;
-
-    // Camera
-    Camera2D cam;
+    Vector2 scale;
 
     // Rects
     Rectangle src;
@@ -54,4 +55,5 @@ private:
 
     // Functions
     void update_motion();
+    void update_cam();
 };

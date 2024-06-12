@@ -36,7 +36,11 @@ int main(void) {
 
             ClearBackground(BEIGE);
             
+            BeginMode2D(engine.get_player().cam);
+            
             engine.render();
+
+            EndMode2D();
 
             DrawFPS(18, 20);
 
