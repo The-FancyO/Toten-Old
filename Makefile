@@ -34,7 +34,7 @@ LDLIBS 				:= -lraylib
 all: build run over
 
 build:
-	$(CXX) $(CXXFLAGS) -o $(EXEC) $(SRCS) $(WARNINGS) $(LDLIBS)
+	$(CXX) $(CXXFLAGS) -o $(EXEC) $(SRCS) $(WARNINGS) $(LDLIBS) -fsanitize=undefined,address
 
 run:
 	./$(EXEC)

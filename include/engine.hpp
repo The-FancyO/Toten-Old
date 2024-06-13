@@ -13,6 +13,8 @@ public:
 
     Player get_player();
 
+    Rectangle tile;
+
 private:
     Image map_col;
     Texture2D map;

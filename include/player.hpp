@@ -17,10 +17,20 @@ public:
     // Collider
     Rectangle col;
 
+    Vector2 old_pos;
+
     // Camera
     Camera2D cam;
 
     bool debug; // debugging
+    
+    Vector2 get_pos();
+    void set_pos_x(float value);
+    void set_pos_y(float value);
+
+    Vector2 get_vel();
+    void set_vel_x(float value);
+    void set_vel_y(float value);
 
 private:
     // Bool

@@ -8,7 +8,7 @@ Player::Player()
     current_texture_val = "idle";
     current_texture = texture[current_texture_val].first;
 
-    pos = { 200, 200 };
+    pos = { 600, 600 };
     vel = { 5, 5 };
     size = { (float)current_texture.width/texture[current_texture_val].second, (float)current_texture.height };
     scale = { 3, 3 };
@@ -51,6 +51,8 @@ Player::~Player() {}
 
 void Player::update_motion()
 {
+    old_pos = pos;
+
     is_moving = false;
     is_idle = true;
 
@@ -159,3 +161,15 @@ void Player::render()
         DrawRectangleLinesEx(col, 3, RED);
     }
 }
+
+// Get and set Position values.
+Vector2 Player::get_pos() { return pos; }
+
+void Player::set_pos_x(float value) { pos.x = value; }
+void Player::set_pos_y(float value) { pos.y = value; }
+
+// Get and set Velocity values.
+Vector2 Player::get_vel() { return vel; }
+
+void Player::set_vel_x(float value) { vel.x = value; }
+void Player::set_vel_y(float value) { vel.y = value; }

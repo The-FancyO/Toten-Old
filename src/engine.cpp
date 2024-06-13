@@ -1,6 +1,7 @@
 #include <global.hpp>
 
 #include <engine.hpp>
+#include <raylib.h>
 
 Engine::Engine() {
     map_col = LoadImage("res/env/map_col.png");
@@ -17,7 +18,16 @@ void Engine::render_map_col() {
             Color pixel = GetImageColor(map_col, x, y);
 
             if (ColorIsEqual(pixel, BLACK)) {
-                DrawRectangle(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE, RED);
+                tile = {x * (float)CELL_SIZE, y * (float)CELL_SIZE, CELL_SIZE, CELL_SIZE};
+                
+                if (CheckCollisionRecs(player.col, tile)) {
+                    player.set_pos_x(player.old_pos.x);
+                    player.set_pos_y(player.old_pos.y);
+                }
+
+                if (player.debug) {
+                    DrawRectangleRec(tile, BLUE);
+                }
             }
         }
     }
@@ -28,12 +38,10 @@ void Engine::update() {
 }
 
 void Engine::render() {
-    DrawTextureEx(map, {0,0}, 0.0f, 2.0f, WHITE);
+    DrawTextureEx(map, {0,0}, 0.0f, 3.0f, WHITE);
 
-    if (player.debug) {
-        render_map_col();
-    }
-
+    render_map_col();
+    
     player.render();
 }
 

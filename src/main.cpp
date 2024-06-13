@@ -38,7 +38,7 @@ int main(void) {
             
             BeginMode2D(engine.get_player().cam);
             
-            engine.render();
+                engine.render();
 
             EndMode2D();
 

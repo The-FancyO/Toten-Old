@@ -1,8 +1,8 @@
 #pragma once
 
 // Tile size
-constexpr int CELL_SIZE = 32;
+const int CELL_SIZE = 48;
 
 // Tilemap array (in tiles)
-constexpr int MAP_WIDTH = 40;
-constexpr int MAP_HEIGHT = 40;
+const int MAP_WIDTH = 40;
+const int MAP_HEIGHT = 40;
